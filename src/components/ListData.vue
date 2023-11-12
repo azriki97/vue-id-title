@@ -1,117 +1,48 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<template>
-  
-    <v-app>
-      <v-main>
-        <v-card v color="transparent"  class="d-flex justify-center text-center"> 
-          <v-btn class="mx-2"  color="#e040fb" @click="formMasuk">
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
-  
-          <v-table class="mt-5 text-center  " hover="true">
-            <template v-slot:default>
-              <thead>
-                <tr class="bg-purple  text-center">
-                  <th class="white--text text-center ">judul</th>
-                  <th class="white--text text-center ">gambar</th>
-                  <th class="white--text text-center w-50">deskripsi</th>
-                  <th class="white--text text-center ">kendali</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="artikel in artikels" :key="artikel.id">
-                  <td class="bg-pink">{{ artikel.judul }}</td>
-                  <td class="bg-pink"><v-img height="125" v-bind:src="artikel.image" alt="gambar" /></td>
-                  <td class="bg-pink">{{ artikel.content }}</td>
-                  <td class="bg-pink">
-                    <v-btn>
-                      <v-icon color="black">mdi-pencil</v-icon>
-                    </v-btn>
-                    <v-btn>
-                      <v-icon color="black">mdi-delete</v-icon>
-                    </v-btn>
-                  </td>
-                </tr>
-              </tbody>
-            </template>
-          </v-table>
-        </v-card>
-      </v-main>
-    </v-app>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ListData',
-    data() {
-      return {
-        artikels: [
-          {
-            id: '1',
-            judul: 'halo del',
-            image: 'https://static.wikia.nocookie.net/roshidere/images/b/bf/Alisa_Mikhailovna_Kujo_Bio.png',
-            content: '"Pada Kamis (26/10/2023), ruang rapat lantai 3 Institut Teknologi Telkom Surabaya (ITTelkom Surabaya) menjadi panggung dari sebuah peristiwa bersejarah yang akan mengubah wajah pengembangan desa di Indonesia. Hari itu, ITTelkom Surabaya dan Asosiasi Dosen Integrator Desa (ADIDES) merayakan penandatanganan Memorandum of Understanding (MoU) yang memulai perjalanan menuju pengembangan desa yang lebih cerdas dan berkelanjutan di seluruh negeri."'
-          },
-          {
-            id: '2',
-            judul: 'halo mas',
-            image: 'https://static.wikia.nocookie.net/roshidere/images/b/bf/Alisa_Mikhailovna_Kujo_Bio.png',
-            content: '"Pada Kamis (26/10/2023), ruang rapat lantai 3 Institut Teknologi Telkom Surabaya (ITTelkom Surabaya) menjadi panggung dari sebuah peristiwa bersejarah yang akan mengubah wajah pengembangan desa di Indonesia. Hari itu, ITTelkom Surabaya dan Asosiasi Dosen Integrator Desa (ADIDES) merayakan penandatanganan Memorandum of Understanding (MoU) yang memulai perjalanan menuju pengembangan desa yang lebih cerdas dan berkelanjutan di seluruh negeri."'
-          },
-        ],
-       
-        }
-      },
-    }
-    
-  </script>
-  
-=======
->>>>>>> c575d9431bc371598cc054588d2906affff078f7
 <template>
   <v-app>
     <v-main>
       <v-card color="transparent" class="d-flex justify-center text-center">
-        <v-table class="mt-5 text-center">
+        <v-table class="mt-6 text-center">
           <template v-slot:default>
             <thead>
               <tr class="bg-pink-darken-1 text-center">
                 <th class="white--text text-center">ID</th>
-<<<<<<< HEAD
-                <th class="white--text text-center" style="width: 50%;">Title</th>
-=======
-                <th class="white--text text-center w-50" >Title</th>
->>>>>>> c575d9431bc371598cc054588d2906affff078f7
+                <th class="white--text text-center" style="width: 20%;">Title</th>
+                <th class="white--text text-center" style="width: 30%;">Deskripsi</th>
                 <th class="white--text text-center">Option</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(artikel, index) in artikels" :key="index">
-                <td :style="{ backgroundColor: '#F8BBD0' }" v-if="index !== 3">
+
+                <!-- Detail ID -->
+                <td :style="{ backgroundColor: '#F8BBD0' }" v-if="index !== 5">
                   {{ artikel.NomorID }}
                 </td>
 
+                <!-- input ID -->
                 <td v-else>
                   <v-text-field v-model="artikel.label" label="Nomor ID" outlined></v-text-field>
                 </td>
 
-                <td :style="{ backgroundColor: '#F8BBD0' }" v-if="index !== 3">{{ artikel.Title }}</td>
+                <!-- Detail title -->
+                <td :style="{ backgroundColor: '#F8BBD0' }" v-if="index !== 5">{{ artikel.Title }}</td>
 
+                <!-- input title -->
                 <td v-else>
-<<<<<<< HEAD
                   <v-text-field v-model="artikel.title" label="Masukkan judul" outlined></v-text-field>
+                </td>
+
+                <!-- Detail Deskripsi -->
+                <td :style="{ backgroundColor: '#F8BBD0' }" v-if="index !== 5">{{ artikel.Desc }}</td>
+
+                <!-- input Deskripsi -->
+                <td v-else>
+                  <v-text-field v-model="artikel.Desc" label="Isi Deskripsi" outlined></v-text-field>
                 </td>
                 
                 <td :style="{ backgroundColor: '#FCE4EC', width: '50%' }">
-=======
-                  <v-text-field v-model="artikel.Title" label="Masukkan Judul" outlined></v-text-field>
-                </td>
-                
-                <td :style="{ backgroundColor: '#FCE4EC' }">
->>>>>>> c575d9431bc371598cc054588d2906affff078f7
-                  <template v-if="index !== 3">
+                  <template v-if="index !== 5">
                     <v-btn>
                       <v-icon>mdi-pencil</v-icon>
                     </v-btn>
@@ -143,34 +74,35 @@ export default {
         {
           id: '1',
           NomorID: '1234567890',
-<<<<<<< HEAD
-          Title: 'Pedagang jual sayur yang berwarna hijau',
+          Title: 'Perut manusia membesar sebesar telor naga setelah memakan harta anak yatim piatu semasa di dunia',
+          Desc: 'Cerita ini tentang seorang manusia ketika semasa hidup di dunia diberi titipan rezeki untuk anak yatim piatu, namun ia mengabaikan untuk membeli rubicon dan pajero dan pada akhirnya anak tersebut mati kelaparan',
         },
         {
           id: '2',
           NomorID: '1111111111',
-          Title: 'Kejar T-rex membuatku kaki semakin buff speed',
+          Title: 'Kejar T-rex membuatku kakiku bertambah kecepatan berlari',
+          Desc: 'Alur cerita ini ketika seseorang tersesat di hutan untuk menyelamatkan diri justru ia menemukan T-Rex jinak yang ia kejar untuk berburu, karena saking cepatnya ia harus berlatih lari cepat',
         },
         {
           id: '3',
           NomorID: '2222222222',
           Title: 'Minuman ini membuatku semakin terbuka pikirannya',
-=======
-          Title: 'Halo Dunia ini adalah Program basis antarmuka',
-        },
-        {
-          id: '2',
-          NomorID: '1212121212',
-          Title: 'Diam - diam aku membuat kelompok untuk skripsi',
-        },
-        {
-          id: '3',
-          NomorID: '3434343434',
-          Title: 'Kerpibadian aku berubah setelah temanku mengucapkan "1 kata"',
->>>>>>> c575d9431bc371598cc054588d2906affff078f7
+          Desc: 'Ketika seseorang membeli minuman yang salah, seharusnya untuk meracuni orang yang ia sayangi namun diminum kepada orang yang salah sehingga memicu keinginan untuk serba terbuka pikirannya',
         },
         {
           id: '4',
+          NomorID: '3333333333',
+          Title: 'Prestasiku bertambah setelah mendatangi negara yang aku datangi',
+          Desc: 'Mengikuti dan lolos beasiswa itu merupakan hal yang menyenangkan lebih lagi dibiyayai full beasiswa',
+        },
+        {
+          id: '5',
+          NomorID: '4444444444',
+          Title: 'Aku bereinkarnasi menjadi ahli sihir yang ganteng saat aku berpindah semesta',
+          Desc: 'Cerita ini berisi tentans seseorang yang ingin menjadi penyihir anggun dan ganteng, namun ia mati dalam keadaan tragis sehingga berinkarnasi menjadi penyihir yang ia impikan selama ini',
+        },
+        {
+          id: '6',
           NomorID: '',
           Title: '',
         },
@@ -184,12 +116,3 @@ export default {
   },
 };
 </script>
-<<<<<<< HEAD
-=======
->>>>>>> 1f735d3 (Tes repo)
->>>>>>> c575d9431bc371598cc054588d2906affff078f7
-<<<<<<< HEAD
-   
-=======
-  
->>>>>>> 2e0134acae2b990466a0e2726332fe3fde36de2a
