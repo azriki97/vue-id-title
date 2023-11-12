@@ -1,8 +1,9 @@
 <<<<<<< HEAD
 <template>
+  
     <v-app>
       <v-main>
-        <v-card v color="transparent"  class="d-flex justify-center text-center">
+        <v-card v color="transparent"  class="d-flex justify-center text-center"> 
           <v-btn class="mx-2"  color="#e040fb" @click="formMasuk">
             <v-icon>mdi-plus</v-icon>
           </v-btn>
