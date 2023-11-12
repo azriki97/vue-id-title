@@ -188,4 +188,8 @@ export default {
 =======
 >>>>>>> 1f735d3 (Tes repo)
 >>>>>>> c575d9431bc371598cc054588d2906affff078f7
+<<<<<<< HEAD
    
+=======
+  
+>>>>>>> 2e0134acae2b990466a0e2726332fe3fde36de2a
